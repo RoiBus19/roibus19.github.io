@@ -1,0 +1,33 @@
+.lightblue{
+background-color: lightblue;
+text-align: center;
+width: 1800px;
+height: 100px;
+}
+.white{
+background-color: white;
+text-align: center;
+width: 1800px;
+height: 100px;
+
+}
+h1{
+text-align: center;
+}
+img{
+float:right;
+width: 350px;
+height: 350px;
+border: double; cornflowerblue;
+border border-radius :3px ;
+padding: 10px;
+}
+html{
+background-color: black;
+color: whitesmoke;
+
+}
+p{
+text-align: left;
+
+}
