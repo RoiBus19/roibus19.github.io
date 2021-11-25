@@ -1,0 +1,100 @@
+h1{
+background-color: lightblue;
+font-size: 40px;
+text-align: center;
+}
+h2{
+	background-color: lightblue;
+}
+h3{
+	background-color: lightblue;
+	font-size: 33px;
+   }
+ h4{
+ 	background-color: lightblue;
+ 	font-size: 40pxpx;
+
+ }
+ h5{
+ 	background-color: lightblue;
+ 	 	font-size: 40px;
+
+ }
+ h6{
+ 	font-size: 40px;
+ 	color: white;
+ }
+ body{
+ 	background-color: black;
+ }
+ p{color: white;}
+ li{
+ 	color: white;
+ }
+
+
+ #li{
+ 	color: white;
+ }
+ img{
+ 	float: right;
+ 	width: 100px;
+ 	border: solid red 5px;
+
+ }
+ .wolf3{
+width: 100px;
+float: left;
+border: solid red 5px;
+
+ }
+ .wolf1{
+width: 50px;
+float: right;
+border: solid red 5px;
+ }
+ .text{text-align: left;}
+
+ .h1{
+font-size: 50px;
+
+ }
+ .ul{
+color: white;
+font-size: 30px;
+
+ }
+ .li1{
+font-size: 25px;
+
+
+}
+
+
+ .li2{font-size: 25px;
+}
+
+
+   .li3{
+font-size: 25px;
+
+
+   }
+   .videogame{width: 180px;
+float: right;
+border: solid floralwhite 5px;
+
+   }
+   .football{
+width: 180px;
+float: right;
+border: solid floralwhite 5px ;
+
+
+   }
+   .music{
+
+width: 180px;
+float: right;
+border: solid floralwhite 5px;
+   }
