@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+body{
+min-height: 100vh ;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0px;
+background-image: url("background.jpg");
+background-size: cover;
+background-position: center;
+}
+.card{
+border: 30px double rgb(179, 36, 62);
+padding: 50px;
+background: linear-gradient(90deg, rgba(236,16,12,0.8491771708683473) 0%, rgba(255,76,0,0.7035189075630253) 49%, rgba(226,13,13,0.7903536414565826) 100%);
+border-radius: 30px;
+}
+.card:hover {
+transform:scale(1.5) rotate(360deg) ;
+transition: all 2s;
+}
+
+
+h1,h2,p {
+font-family: Indie Flower ;
+font-size: 30px;
+}
