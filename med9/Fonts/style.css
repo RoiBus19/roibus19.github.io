@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Lora&family=Montserrat:wght@300&display=swap');
+
+h1{
+font-family: Lora;
+text-align: center;
+font-size: 50px;
+}
+h2{
+text-align:right ;
+font-size: 40px;
+font-family: Lobster;
+
+}
+
+p{
+font-family: Montserrat;
+text-align: justify;
+column-count: 3;
+line-height: 1.5;
+font-size: 20px;
+color: white;
+
+
+}
+.signature{
+font-family: Lobster;
+font-size: 50px;
+
+
+}
+body{
+
+
+	   background: linear-gradient(90deg, rgba(180,119,58,1) 23%, rgba(213,29,253,1) 75%);
+}
