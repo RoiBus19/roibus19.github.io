@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Supermercado+One&display=swap');
+
+
+body{
+min-height: 100vh ;
+
+align-items: center;
+justify-content: center;
+margin: 0px;
+background-image: url("Soccer.jpg");
+background-size: cover;
+background-position: center;
+}
+.soccer{
+border: 30px double rgb(122, 125, 123);
+padding: 50px;
+background: linear-gradient(90deg, rgba(136, 179, 150) 0%, rgba(136, 179, 150) 49%, rgba(136, 179, 150) 100%);
+border-radius: 30px;
+}
+.soccer:hover {
+transform:scale(1.5) rotate(360deg) ;
+transition: all 2s;
+}
+
+
+h1,h2,p {
+font-family: Supermercado One ;
+font-size: 30px;
+}
+
+.soccer2{
+border: 30px double rgb(122, 125, 123);
+padding: 50px;
+background: linear-gradient(90deg, rgba(136, 179, 150) 0%, rgba(136, 179, 150) 49%, rgba(136, 179, 150) 100%);
+border-radius: 30px;
+}
+.soccer2:hover {
+transform:scale(2) rotate(180deg) ;
+transition: all 3s;
+}
+
+
+h1,h2,p {
+font-family: Supermercado One ;
+font-size: 30px;
+}
+
+a{ 
+
+display: block;
+ }
+
+
+
+ ul{
+text-align: left;
+
+font-size: 45px;
+font-family: Supermercado One;
+ }
+ li{
+font-size: 50px;
+font-family: Supermercado One;
+
+
+
+ }
+ ol{
+ 	display: block;
+font-size: 30px;
+
+ }
+ .Clo{
+
+ 	color: whitesmoke;
+ }
