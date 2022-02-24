@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Redressed&display=swap');
+
+
+body{
+	margin: 0;
+}
+header{
+height: 650px;
+display: flex;
+justify-content: center;
+align-items: center;
+background-image:url("ferrari.jpg") ;
+background-size: cover;
+background-position: center;
+}
+
+header h1{
+padding: 35px;
+background: linear-gradient(0deg, rgba(112,101,101,0.5074404761904762) 0%, rgba(66,64,66,0.6474964985994398) 100%);
+border-radius:20px ;
+font-family:Architects Daughter ;
+font-size: 28px;
+}
+
+
+
+main p{
+padding: 100px;
+background: linear-gradient(0deg, rgba(99,101,101,0.5074404761904762) 0%, rgba(66,64,58,0.6474964985994398) 100%);
+column-count: 2;
+font-family:Redressed ;
+font-size: 24px;
+}
+
+
+#info{
+display: flex;
+    justify-content: space-between;
+    align-items: center;
+padding: 65px;
+background: linear-gradient(0deg, rgba(99,101,101,0.5074404761904762) 0%, rgba(66,64,58,0.6474964985994398) 100%);
+font-family:Architects Daughter ;
+font-size: 28px;
+}
+
+footer{
+	height: 650px;
+	display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-size: cover;
+background-position: center;
+    background-image:url("ferrari2.jpg") ;
+
+}
+footer p{
+padding: 50px;
+background: linear-gradient(0deg, rgba(99,101,101,0.5074404761904762) 0%, rgba(66,64,58,0.6474964985994398) 100%);
+border-radius: 35px;
+font-family:Redressed ;
+font-size: 28px;
+}
+
