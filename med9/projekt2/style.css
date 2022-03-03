@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Raleway:wght@100&display=swap');
+
+header h1{
+font-family:Raleway ;
+text-align: center;
+}
+header h2{
+font-family:Dancing Script ;
+text-align: center;
+font-size: 13px;
+}
+
+.a{
+text-align: center;
+column-count: 3;
+border: 4px dotted;
+padding: 40px;
+margin: 30px;
+font-family:Raleway ;
+}
+
+#b{
+display: flex;
+justify-content: center;
+align-items: center;
+border: 4px dotted;
+padding: 40px;
+margin: 30px;
+font-family:Raleway ;
+background: radial-gradient(circle, rgba(43,144,168,1) 0%, rgba(52,82,215,1) 100%);
+
+}
+#b p{
+background-color: rgb(255, 255, 255,0.6);
+font-family:Raleway ;
+padding:15px ;
+
+}
+
+.c{
+display: flex;
+justify-content: space-between;
+align-items: stretch;
+font-family:Raleway ;
+background-color: lightblue;
+border: 4px dotted;
+height: 200px;
+margin: 30px;
+
+}
+
+.c p{
+background-color: rgb(255, 255, 255,0.6);
+font-family:Raleway ;
+margin: 1px;
+padding: 30px;
+
+}
+
+#d{
+display: flex;
+justify-content: center;
+align-items:center;
+margin: 30px;
+background-color: blue;
+border: 4px dotted;
+height:230px ;
+}
+#d img{
+height: 100px;
+border: solid white 5px;
+}
+ footer{
+border: 4px dotted;
+background-color:darkblue ;
+margin: 30px;
+display: flex;
+justify-content: space-evenly;
+align-items: flex-end;
+height: 250px;
+
+ }
+ footer p{
+background-color: white;
+font-family:Raleway ;
+padding: 10px;
+margin: 0px;
+ }
