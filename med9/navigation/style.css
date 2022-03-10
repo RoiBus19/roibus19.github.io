@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
+
+
+body{
+margin: 0px;
+
+}
+
+
+nav {
+background: linear-gradient(0deg, rgba(31,152,57,0.7035189075630253) 0%, rgba(24,215,14,0.7763480392156863) 50%, rgba(28,177,67,0.8575805322128851) 100%);
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 30px;
+
+
+}
+nav img{
+height: 100px;
+border-radius: 50%;
+
+}
+nav ul{
+display: flex;
+justify-content: flex-end;
+align-items: center;
+list-style-type: none;
+
+
+}
+
+nav ul li a{
+margin: 20px;
+padding: 25px;
+text-decoration: none;
+background-color: seagreen;
+border-radius: 15px;
+font-family: Syne Mono;
+
+}
+
+nav ul li a:hover{
+
+color: white;
+transform:scale(1.8) rotate(360deg) ;
+transition: all 1.8s;
+text-transform: capitalize;
+text-overflow: ellipsis;
+
+}
