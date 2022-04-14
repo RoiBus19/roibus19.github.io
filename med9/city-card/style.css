@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
+
+body{
+margin: 0;
+background-color: lightgoldenrodyellow;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+font-family: Roboto;
+}
+
+
+
+article{
+position: relative;
+width: 700px;
+height: 200px;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+}
+
+
+
+
+article .image {
+width: 700px;
+height: 170px;
+background-image: url("barcelona.jpg");
+background-position: center;
+background-size: cover;
+padding: 20px;
+}
+
+
+
+
+article .right {
+width: 700px;
+height: 170px;
+background: linear-gradient(347deg, rgba(219,223,180,1) 0%, rgba(161,167,18,0.6811099439775911) 50%, rgba(234,236,222,1) 100%);
+padding: 20px;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+flex-direction: column;
+}
+
+
+article div h1{
+	background-color: blue;
+	color: white;
+	position: relative;
+	left: -50px;
+	top: 12px;
+	font-size: 35px;
+	z-index: 100;
+	padding: 6px;
+
+}
+
+article div h2{
+background-color: white;
+color: blue;
+font-size: 40px;
+position: relative;
+left:90px ;
+top:-55px ;
+padding: 4px;
+text-transform: uppercase;
+
+}
+
+
+
+
