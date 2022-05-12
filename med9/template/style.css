@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+nav {
+	background-color: rgb(0, 0, 0,0.1);
+	display: flex;
+	justify-content: space-between; /*To make the links on the right side and the links in the left*/
+	align-items: center;
+	padding: 30px;
+	height: 30px;
+	border: 1px solid black;
+
+}
+
+nav ul{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	list-style-type: none; /*It removes the bullet points*/
+
+
+}
+
+nav ul li a{
+	margin: 20px;
+	padding: 25px;
+	text-decoration: none;/*Removes the line under the link*/
+	border-radius: 15px;
+	font-family: Dancing Script;
+	font-size: 20px;
+	}
+
+	nav ul li a:hover{
+	/*Hover changes the element if we move the mouse over it*/
+	color: red;
+	text-transform: capitalize;/*It makes the writting big*/
+	text-overflow: ellipsis;
+	pointer-events: painted;
+	}
+	h1{
+    color: black;
+
+	}
+	.text{
+		color: dimgrey;
+		margin-left: 12px;
+		font-size:20px ;
+
+	}	
+	a{
+		color: grey;
+
+	}
+
+	article{
+	position: relative;
+	margin-top: 35px;
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 30px;
+}
+
+article .house{
+	width: 280px;
+	height: 180px;
+	background-image: url("house.jpg");
+	background-position: center;
+	background-size: cover;
+padding: 20px;
+
+
+}
+article .box{
+	position: relative;
+	background-color: black;
+	padding: 6px;
+	text-transform:uppercase ;
+	top: -50px;
+	left: -50px;
+	color: white;
+	width: 60%;
+}
+article .house1{
+	width: 280px;
+	height: 180px;
+	background-image: url("house1.jpg");
+	background-position: center;
+	background-size: cover;
+padding: 20px;
+}
+
+article .house2{
+	width: 280px;
+	height: 180px;
+	background-image: url("house2.jpg");
+	background-position: center;
+	background-size: cover;
+padding: 20px;
+}
+article .house3{
+	width: 280px;
+	height: 180px;
+	background-image: url("house3.jpg");
+	background-position: center;
+	background-size: cover;
+padding: 20px;
+}
+
+article .house4{
+	width: 280px;
+	height: 180px;
+	background-image: url("house4.jpg");
+	background-position: center;
+	background-size: cover;
+padding: 20px;
+}
+
+article .house5{
+	width: 280px;
+	height: 180px;
+	background-image: url("house5.jpg");
+	background-position: center;
+	background-size: cover;
+padding: 20px;
+}
+article .house6{
+	width: 280px;
+	height: 180px;
+	background-image: url("house6.jpg");
+	background-position: center;
+	background-size: cover;
+padding: 20px;
+}
+
+article .house7{
+	width: 280px;
+	height: 180px;
+	background-image: url("house7.jpg");
+	background-position: center;
+	background-size: cover;
+padding: 20px;
+}
+div{
+	margin: 30px;
+
+
+}
+
+h1{
+font-family:Roboto ;
+margin: 30px;
+
+}
+
+
+article .image{
+	width: 280px;
+	height: 180px;
+	background-image: url("person.jpg");
+	background-position: center;
+	background-size: cover;
+padding: 20px;
+
+}
+
+article .text{
+	width:280px ;
+	height: 180px;
+	background-color:ghostwhite ;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-direction: column;
+
+}
+  article .text .mini-header{
+  	text-transform: uppercase;
+  	font-size: smaller;
+
+  }
+
+
+
+ article .text .mini-footer{
+ 	display: flex;
+ 	align-items: center;
+ 	justify-content: space-between;
+ 	font-size:11px;
+ 	color: grey;
+ 	width:100% ;
+ }
+
+article .text .mini-header span{
+margin-right: 8px;
+}
+article .image1{
+	width: 280px;
+	height: 180px;
+	background-image: url("person1.jpg");
+	background-position: center;
+	background-size: cover;
+padding: 20px;
+
+}
+article .image2{
+	width: 280px;
+	height: 180px;
+	background-image: url("person2.jpg");
+	background-position: center;
+	background-size: cover;
+padding: 20px;
+
+}
+article .image3{
+	width: 280px;
+	height: 180px;
+	background-image: url("person3.jpg");
+	background-position: center;
+	background-size: cover;
+padding: 20px;
+
+}
