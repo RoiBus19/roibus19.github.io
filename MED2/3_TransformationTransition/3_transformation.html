@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Transrmation</title>
+	<style type="text/css">
+		
+		.contanier{
+			margin:100px ;
+
+		}
+
+		.contanier:hover .circle1,.contanier:hover .circle2,.contanier:hover .circle3,.contanier:hover .circle4,
+		.contanier:hover .circle5{
+			transform:translateX(200px) ;
+
+
+		}
+		
+
+		
+
+		
+
+	.circle1, .circle2, .circle3, .circle4, .circle5{
+		width:30px ;
+		height: 30px;
+		border-radius:50% ;
+		margin: 10px;
+
+	}
+
+
+
+	.circle1 {
+		background-color:red ;
+		transition-duration:2s ;
+		/*linear: gleichmassige Bewegung;*/
+		transition-timing-function:linear ;
+		transition:2s linear ;
+	}
+
+	.circle2 {
+	background-color:green ;
+	transition-duration:2s ;
+	transition-timing-function:ease ;
+	}
+
+	.circle3{
+	background-color:yellow ;
+	transition-duration:2s ;
+	transition-timing-function:ease-in;
+	} 
+
+	.circle4 {
+	background-color:orange ;
+	transition-duration:2s ;
+	transition-timing-function:ease-out ;
+	}
+
+	.circle5{
+	background-color:blue ;
+	transition-duration:2s ;
+	transition-timing-function:ease-in-out ;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</style>
+</head>
+<body>
+
+
+
+
+
+
+	<h1>Transformation</h1>
+	<p>The translae() CSS function repositions an element in the horizontal and/or vertical directions.</p>
+	<div class="contanier">
+		
+		<div class="circle1"></div>
+		
+	<div class="circle2"></div>
+
+		<div class="circle3"></div>
+
+	<div class="circle4"></div>
+
+		<div class="circle5"></div>
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+</body>
+</html>
