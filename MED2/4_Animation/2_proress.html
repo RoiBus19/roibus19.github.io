@@ -1,0 +1,64 @@
+<!DOCTYPe html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>progress</title>
+	<style type="text/css">
+		body{
+			background-color:#2a9d3f;
+		}
+        .progress{
+        	letter-spacing:5px ;
+        	 color: orange;
+        	margin: 10px;
+        }
+        .bar{
+        	
+        	width: 250px;
+        	border:solid orange 6px;
+        	border-radius:15px ;
+        	height: 10px;
+
+        }
+
+
+
+
+
+
+
+.bar1{
+            background-color: white;
+            animation: move 4s;
+            animation-iteration-count: infinite;
+            height: 10px;
+
+
+
+       }
+
+
+
+       @keyframes move{
+            0%{width:0%;}
+            25%{width: 50%;}
+            50%{width: 75%;}
+            75%{width: 85%;}
+            100%{width: 100%;}
+
+
+
+       }
+
+	</style>
+</head>
+<body>
+	<div class="progress">Progressing...</div>
+	<div class="bar">
+		<div class="bar1"></div>
+	</div>
+	
+
+</body>
+</html>
