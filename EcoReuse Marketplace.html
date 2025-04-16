@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoShift Marketplace</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#4CAF50',secondary:'#8BC34A'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .custom-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+        .custom-range::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .custom-checkbox {
+            position: relative;
+            padding-left: 28px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .custom-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 18px;
+            width: 18px;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            background-color: white;
+        }
+        .custom-checkbox:hover input ~ .checkmark {
+            border-color: #4CAF50;
+        }
+        .custom-checkbox input:checked ~ .checkmark {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+        }
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        .custom-checkbox input:checked ~ .checkmark:after {
+            display: block;
+        }
+        .custom-checkbox .checkmark:after {
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e5e7eb;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .toggle-slider {
+            background-color: #4CAF50;
+        }
+        input:checked + .toggle-slider:before {
+            transform: translateX(26px);
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <!-- Top navigation -->
+            <div class="flex items-center justify-between py-4">
+                <a href="https://readdy.ai/home/20bf29c4-329d-4f77-9fd9-801aea11b117/77c21e8a-9de4-4d73-80bb-bae388413b40" data-readdy="true" class="font-['Pacifico'] text-2xl text-primary">
+                    EcoShift
+                </a>
+                
+                <div class="relative w-1/3">
+                    <input type="text" placeholder="Search for sustainable products..." class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm">
+                    <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-search-line"></i>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="flex flex-col items-center text-gray-600 hover:text-primary">
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-heart-line"></i>
+                        </div>
+                        <span class="text-xs mt-1">Wishlist</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center text-gray-600 hover:text-primary relative">
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-shopping-cart-line"></i>
+                        </div>
+                        <span class="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+                        <span class="text-xs mt-1">Cart</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center text-gray-600 hover:text-primary">
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-user-line"></i>
+                        </div>
+                        <span class="text-xs mt-1">Account</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Category navigation -->
+            <nav class="border-t border-gray-100 py-3">
+                <div class="flex justify-between items-center">
+                    <div class="flex space-x-8">
+                        <a href="#" class="text-primary font-medium border-b-2 border-primary pb-2 text-sm">All Products</a>
+                        <a href="#" class="text-gray-600 hover:text-primary font-medium pb-2 text-sm">Clothing</a>
+                        <a href="#" class="text-gray-600 hover:text-primary font-medium pb-2 text-sm">Food</a>
+                        <a href="#" class="text-gray-600 hover:text-primary font-medium pb-2 text-sm">Electronics</a>
+                        <a href="#" class="text-gray-600 hover:text-primary font-medium pb-2 text-sm">Home & Garden</a>
+                        <a href="#" class="text-gray-600 hover:text-primary font-medium pb-2 text-sm">Beauty</a>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm text-gray-600">Sell on EcoShift</span>
+                        <div class="w-5 h-5 flex items-center justify-center text-primary">
+                            <i class="ri-arrow-right-line"></i>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 flex">
+        <!-- Filters sidebar -->
+        <aside class="w-64 mr-8">
+            <div class="bg-white p-5 rounded shadow-sm">
+                <h2 class="font-semibold text-lg mb-5">Filters</h2>
+                
+                <!-- Price range filter -->
+                <div class="mb-6">
+                    <h3 class="font-medium text-sm mb-3">Price Range</h3>
+                    <input type="range" min="0" max="500" value="250" class="w-full h-2 bg-gray-200 rounded-full custom-range">
+                    <div class="flex justify-between mt-2">
+                        <div class="relative">
+                            <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
+                            <input type="number" value="0" min="0" class="w-24 pl-8 pr-2 py-1 border border-gray-200 rounded text-sm">
+                        </div>
+                        <div class="relative">
+                            <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
+                            <input type="number" value="250" min="0" class="w-24 pl-8 pr-2 py-1 border border-gray-200 rounded text-sm">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Size filter (for clothing) -->
+                <div class="mb-6">
+                    <h3 class="font-medium text-sm mb-3">Size</h3>
+                    <div class="grid grid-cols-4 gap-2">
+                        <button class="border border-gray-200 rounded py-1 text-sm hover:border-primary hover:text-primary">XS</button>
+                        <button class="border border-gray-200 rounded py-1 text-sm hover:border-primary hover:text-primary">S</button>
+                        <button class="border border-primary bg-primary/10 rounded py-1 text-sm text-primary">M</button>
+                        <button class="border border-gray-200 rounded py-1 text-sm hover:border-primary hover:text-primary">L</button>
+                        <button class="border border-gray-200 rounded py-1 text-sm hover:border-primary hover:text-primary">XL</button>
+                        <button class="border border-gray-200 rounded py-1 text-sm hover:border-primary hover:text-primary">XXL</button>
+                    </div>
+                </div>
+                
+                <!-- Condition filter -->
+                <div class="mb-6">
+                    <h3 class="font-medium text-sm mb-3">Condition</h3>
+                    <div class="space-y-2">
+                        <label class="custom-checkbox block text-sm">
+                            Like New
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="custom-checkbox block text-sm">
+                            Excellent
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="custom-checkbox block text-sm">
+                            Good
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="custom-checkbox block text-sm">
+                            Fair
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Brand filter -->
+                <div class="mb-6">
+                    <h3 class="font-medium text-sm mb-3">Brand</h3>
+                    <div class="space-y-2">
+                        <label class="custom-checkbox block text-sm">
+                            Patagonia
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="custom-checkbox block text-sm">
+                            Levi's
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="custom-checkbox block text-sm">
+                            The North Face
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="custom-checkbox block text-sm">
+                            H&M Conscious
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <button class="text-primary text-sm mt-2 flex items-center">
+                        <span>Show more</span>
+                        <div class="w-4 h-4 flex items-center justify-center ml-1">
+                            <i class="ri-arrow-down-s-line"></i>
+                        </div>
+                    </button>
+                </div>
+                
+                <!-- Location filter -->
+                <div class="mb-6">
+                    <h3 class="font-medium text-sm mb-3">Location</h3>
+                    <div class="relative">
+                        <select class="w-full appearance-none border border-gray-200 rounded py-2 px-3 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+                            <option>Within 5 miles</option>
+                            <option>Within 10 miles</option>
+                            <option>Within 25 miles</option>
+                            <option>Within 50 miles</option>
+                            <option>Nationwide</option>
+                        </select>
+                        <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none w-4 h-4 flex items-center justify-center text-gray-500">
+                            <i class="ri-arrow-down-s-line"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Apply filters button -->
+                <button class="w-full bg-primary text-white py-2 rounded-button font-medium text-sm hover:bg-primary/90 whitespace-nowrap">Apply Filters</button>
+            </div>
+        </aside>
+        
+        <!-- Product grid -->
+        <div class="flex-1">
+            <!-- Results header -->
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-xl font-semibold">1,248 Sustainable Products</h1>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <span class="text-sm text-gray-600 mr-2">Show:</span>
+                        <div class="relative">
+                            <select class="appearance-none border border-gray-200 rounded py-1 px-3 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+                                <option>24 per page</option>
+                                <option>48 per page</option>
+                                <option>96 per page</option>
+                            </select>
+                            <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none w-4 h-4 flex items-center justify-center text-gray-500">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <span class="text-sm text-gray-600 mr-2">Sort by:</span>
+                        <div class="relative">
+                            <select class="appearance-none border border-gray-200 rounded py-1 px-3 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+                                <option>Relevance</option>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                                <option>Newest First</option>
+                                <option>Eco Impact</option>
+                            </select>
+                            <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none w-4 h-4 flex items-center justify-center text-gray-500">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="bg-white rounded shadow-sm overflow-hidden product-card transition-all duration-300">
+                    <div class="relative">
+                        <img src="https://readdy.ai/api/search-image?query=sustainable%20eco-friendly%20recycled%20denim%20jeans%2C%20high%20quality%2C%20minimalist%20background%2C%20fashion%20photography%2C%20soft%20lighting%2C%20product%20on%20white%20background&width=400&height=300&seq=1&orientation=squarish" alt="Recycled Denim Jeans" class="w-full h-48 object-cover object-top">
+                        <span class="absolute top-3 left-3 bg-green-100 text-primary text-xs font-medium px-2 py-1 rounded">Like New</span>
+                        <button class="absolute top-3 right-3 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-400 hover:text-red-500">
+                            <i class="ri-heart-line"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium text-gray-900 mb-1">Patagonia Recycled Denim Jeans</h3>
+                        <div class="flex items-center mb-2">
+                            <span class="text-lg font-semibold text-gray-900">$45.99</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$89.99</span>
+                            <span class="ml-2 text-xs bg-red-100 text-red-700 px-1.5 py-0.5 rounded">-49%</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>Size: M</span>
+                            <span class="mx-2">•</span>
+                            <span>Clothing</span>
+                        </div>
+                        <div class="flex items-center text-xs text-gray-500 mb-3">
+                            <div class="w-4 h-4 flex items-center justify-center mr-1">
+                                <i class="ri-recycle-line text-primary"></i>
+                            </div>
+                            <span>Saves 1,700 liters of water</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500">Posted 2 days ago</span>
+                            <button class="bg-primary text-white text-sm py-1.5 px-3 rounded-button hover:bg-primary/90 whitespace-nowrap">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="bg-white rounded shadow-sm overflow-hidden product-card transition-all duration-300">
+                    <div class="relative">
+                        <img src="https://readdy.ai/api/search-image?query=sustainable%20eco-friendly%20organic%20cotton%20t-shirt%2C%20high%20quality%2C%20minimalist%20background%2C%20fashion%20photography%2C%20soft%20lighting%2C%20product%20on%20white%20background&width=400&height=300&seq=2&orientation=squarish" alt="Organic Cotton T-Shirt" class="w-full h-48 object-cover object-top">
+                        <span class="absolute top-3 left-3 bg-green-100 text-primary text-xs font-medium px-2 py-1 rounded">Excellent</span>
+                        <button class="absolute top-3 right-3 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-400 hover:text-red-500">
+                            <i class="ri-heart-line"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium text-gray-900 mb-1">Organic Cotton T-Shirt</h3>
+                        <div class="flex items-center mb-2">
+                            <span class="text-lg font-semibold text-gray-900">$18.50</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$32.00</span>
+                            <span class="ml-2 text-xs bg-red-100 text-red-700 px-1.5 py-0.5 rounded">-42%</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>Size: L</span>
+                            <span class="mx-2">•</span>
+                            <span>Clothing</span>
+                        </div>
+                        <div class="flex items-center text-xs text-gray-500 mb-3">
+                            <div class="w-4 h-4 flex items-center justify-center mr-1">
+                                <i class="ri-leaf-line text-primary"></i>
+                            </div>
+                            <span>No pesticides used</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500">Posted 1 week ago</span>
+                            <button class="bg-primary text-white text-sm py-1.5 px-3 rounded-button hover:bg-primary/90 whitespace-nowrap">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="bg-white rounded shadow-sm overflow-hidden product-card transition-all duration-300">
+                    <div class="relative">
+                        <img src="https://readdy.ai/api/search-image?query=sustainable%20eco-friendly%20recycled%20wool%20sweater%2C%20high%20quality%2C%20minimalist%20background%2C%20fashion%20photography%2C%20soft%20lighting%2C%20product%20on%20white%20background&width=400&height=300&seq=3&orientation=squarish" alt="Recycled Wool Sweater" class="w-full h-48 object-cover object-top">
+                        <span class="absolute top-3 left-3 bg-green-100 text-primary text-xs font-medium px-2 py-1 rounded">Like New</span>
+                        <button class="absolute top-3 right-3 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-red-500">
+                            <i class="ri-heart-fill"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium text-gray-900 mb-1">The North Face Recycled Wool Sweater</h3>
+                        <div class="flex items-center mb-2">
+                            <span class="text-lg font-semibold text-gray-900">$52.99</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$129.99</span>
+                            <span class="ml-2 text-xs bg-red-100 text-red-700 px-1.5 py-0.5 rounded">-59%</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>Size: M</span>
+                            <span class="mx-2">•</span>
+                            <span>Clothing</span>
+                        </div>
+                        <div class="flex items-center text-xs text-gray-500 mb-3">
+                            <div class="w-4 h-4 flex items-center justify-center mr-1">
+                                <i class="ri-recycle-line text-primary"></i>
+                            </div>
+                            <span>85% recycled materials</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500">Posted 3 days ago</span>
+                            <button class="bg-primary text-white text-sm py-1.5 px-3 rounded-button hover:bg-primary/90 whitespace-nowrap">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="bg-white rounded shadow-sm overflow-hidden product-card transition-all duration-300">
+                    <div class="relative">
+                        <img src="https://readdy.ai/api/search-image?query=sustainable%20eco-friendly%20organic%20vegetables%2C%20fresh%20produce%2C%20minimalist%20background%2C%20food%20photography%2C%20soft%20lighting%2C%20product%20on%20white%20background&width=400&height=300&seq=4&orientation=squarish" alt="Organic Vegetable Box" class="w-full h-48 object-cover object-top">
+                        <span class="absolute top-3 left-3 bg-green-100 text-primary text-xs font-medium px-2 py-1 rounded">Fresh</span>
+                        <button class="absolute top-3 right-3 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-400 hover:text-red-500">
+                            <i class="ri-heart-line"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium text-gray-900 mb-1">Local Organic Vegetable Box</h3>
+                        <div class="flex items-center mb-2">
+                            <span class="text-lg font-semibold text-gray-900">$24.99</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$34.99</span>
+                            <span class="ml-2 text-xs bg-red-100 text-red-700 px-1.5 py-0.5 rounded">-29%</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>5kg</span>
+                            <span class="mx-2">•</span>
+                            <span>Food</span>
+                        </div>
+                        <div class="flex items-center text-xs text-gray-500 mb-3">
+                            <div class="w-4 h-4 flex items-center justify-center mr-1">
+                                <i class="ri-truck-line text-primary"></i>
+                            </div>
+                            <span>Local delivery (5 miles)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500">Expires in 5 days</span>
+                            <button class="bg-primary text-white text-sm py-1.5 px-3 rounded-button hover:bg-primary/90 whitespace-nowrap">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="bg-white rounded shadow-sm overflow-hidden product-card transition-all duration-300">
+                    <div class="relative">
+                        <img src="https://readdy.ai/api/search-image?query=sustainable%20eco-friendly%20recycled%20sneakers%2C%20high%20quality%2C%20minimalist%20background%2C%20fashion%20photography%2C%20soft%20lighting%2C%20product%20on%20white%20background&width=400&height=300&seq=5&orientation=squarish" alt="Recycled Sneakers" class="w-full h-48 object-cover object-top">
+                        <span class="absolute top-3 left-3 bg-green-100 text-primary text-xs font-medium px-2 py-1 rounded">Good</span>
+                        <button class="absolute top-3 right-3 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-400 hover:text-red-500">
+                            <i class="ri-heart-line"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium text-gray-900 mb-1">Adidas Recycled Ocean Plastic Sneakers</h3>
+                        <div class="flex items-center mb-2">
+                            <span class="text-lg font-semibold text-gray-900">$65.00</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$120.00</span>
+                            <span class="ml-2 text-xs bg-red-100 text-red-700 px-1.5 py-0.5 rounded">-46%</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>Size: 42 EU</span>
+                            <span class="mx-2">•</span>
+                            <span>Footwear</span>
+                        </div>
+                        <div class="flex items-center text-xs text-gray-500 mb-3">
+                            <div class="w-4 h-4 flex items-center justify-center mr-1">
+                                <i class="ri-water-flash-line text-primary"></i>
+                            </div>
+                            <span>Made from ocean plastic</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500">Posted 1 month ago</span>
+                            <button class="bg-primary text-white text-sm py-1.5 px-3 rounded-button hover:bg-primary/90 whitespace-nowrap">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="bg-white rounded shadow-sm overflow-hidden product-card transition-all duration-300">
+                    <div class="relative">
+                        <img src="https://readdy.ai/api/search-image?query=sustainable%20eco-friendly%20reusable%20water%20bottle%2C%20high%20quality%2C%20minimalist%20background%2C%20product%20photography%2C%20soft%20lighting%2C%20product%20on%20white%20background&width=400&height=300&seq=6&orientation=squarish" alt="Reusable Water Bottle" class="w-full h-48 object-cover object-top">
+                        <span class="absolute top-3 left-3 bg-green-100 text-primary text-xs font-medium px-2 py-1 rounded">Excellent</span>
+                        <button class="absolute top-3 right-3 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-400 hover:text-red-500">
+                            <i class="ri-heart-line"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium text-gray-900 mb-1">Stainless Steel Water Bottle</h3>
+                        <div class="flex items-center mb-2">
+                            <span class="text-lg font-semibold text-gray-900">$15.99</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$28.99</span>
+                            <span class="ml-2 text-xs bg-red-100 text-red-700 px-1.5 py-0.5 rounded">-45%</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>750ml</span>
+                            <span class="mx-2">•</span>
+                            <span>Home & Garden</span>
+                        </div>
+                        <div class="flex items-center text-xs text-gray-500 mb-3">
+                            <div class="w-4 h-4 flex items-center justify-center mr-1">
+                                <i class="ri-recycle-line text-primary"></i>
+                            </div>
+                            <span>Replaces 1,460 plastic bottles yearly</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500">Posted 5 days ago</span>
+                            <button class="bg-primary text-white text-sm py-1.5 px-3 rounded-button hover:bg-primary/90 whitespace-nowrap">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="bg-white rounded shadow-sm overflow-hidden product-card transition-all duration-300">
+                    <div class="relative">
+                        <img src="https://readdy.ai/api/search-image?query=sustainable%20eco-friendly%20organic%20bread%2C%20artisan%20loaf%2C%20minimalist%20background%2C%20food%20photography%2C%20soft%20lighting%2C%20product%20on%20white%20background&width=400&height=300&seq=7&orientation=squarish" alt="Organic Sourdough Bread" class="w-full h-48 object-cover object-top">
+                        <span class="absolute top-3 left-3 bg-green-100 text-primary text-xs font-medium px-2 py-1 rounded">Fresh</span>
+                        <button class="absolute top-3 right-3 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-400 hover:text-red-500">
+                            <i class="ri-heart-line"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium text-gray-900 mb-1">Organic Sourdough Bread</h3>
+                        <div class="flex items-center mb-2">
+                            <span class="text-lg font-semibold text-gray-900">$4.50</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$7.99</span>
+                            <span class="ml-2 text-xs bg-red-100 text-red-700 px-1.5 py-0.5 rounded">-44%</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>500g</span>
+                            <span class="mx-2">•</span>
+                            <span>Food</span>
+                        </div>
+                        <div class="flex items-center text-xs text-gray-500 mb-3">
+                            <div class="w-4 h-4 flex items-center justify-center mr-1">
+                                <i class="ri-leaf-line text-primary"></i>
+                            </div>
+                            <span>Locally sourced organic flour</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500">Expires tomorrow</span>
+                            <button class="bg-primary text-white text-sm py-1.5 px-3 rounded-button hover:bg-primary/90 whitespace-nowrap">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="bg-white rounded shadow-sm overflow-hidden product-card transition-all duration-300">
+                    <div class="relative">
+                        <img src="https://readdy.ai/api/search-image?query=sustainable%20eco-friendly%20bamboo%20toothbrushes%2C%20high%20quality%2C%20minimalist%20background%2C%20product%20photography%2C%20soft%20lighting%2C%20product%20on%20white%20background&width=400&height=300&seq=8&orientation=squarish" alt="Bamboo Toothbrushes" class="w-full h-48 object-cover object-top">
+                        <span class="absolute top-3 left-3 bg-green-100 text-primary text-xs font-medium px-2 py-1 rounded">New</span>
+                        <button class="absolute top-3 right-3 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-400 hover:text-red-500">
+                            <i class="ri-heart-line"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium text-gray-900 mb-1">Bamboo Toothbrushes (4-Pack)</h3>
+                        <div class="flex items-center mb-2">
+                            <span class="text-lg font-semibold text-gray-900">$9.99</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$16.99</span>
+                            <span class="ml-2 text-xs bg-red-100 text-red-700 px-1.5 py-0.5 rounded">-41%</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>4 pieces</span>
+                            <span class="mx-2">•</span>
+                            <span>Personal Care</span>
+                        </div>
+                        <div class="flex items-center text-xs text-gray-500 mb-3">
+                            <div class="w-4 h-4 flex items-center justify-center mr-1">
+                                <i class="ri-plant-line text-primary"></i>
+                            </div>
+                            <span>100% biodegradable</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500">Posted today</span>
+                            <button class="bg-primary text-white text-sm py-1.5 px-3 rounded-button hover:bg-primary/90 whitespace-nowrap">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="mt-10 flex justify-center">
+                <nav class="flex items-center">
+                    <button class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:border-primary hover:text-primary mr-2">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </button>
+                    <button class="w-9 h-9 flex items-center justify-center rounded-full bg-primary text-white font-medium mr-2">1</button>
+                    <button class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-200 text-gray-700 hover:border-primary hover:text-primary mr-2">2</button>
+                    <button class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-200 text-gray-700 hover:border-primary hover:text-primary mr-2">3</button>
+                    <span class="mx-2 text-gray-500">...</span>
+                    <button class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-200 text-gray-700 hover:border-primary hover:text-primary mr-2">12</button>
+                    <button class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:border-primary hover:text-primary">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="bg-white border-t border-gray-100 mt-16 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <a href="https://readdy.ai/home/20bf29c4-329d-4f77-9fd9-801aea11b117/77c21e8a-9de4-4d73-80bb-bae388413b40" data-readdy="true" class="font-['Pacifico'] text-2xl text-primary mb-4 inline-block">
+                        EcoShift
+                    </a>
+                    <p class="text-gray-600 text-sm mt-2">Connecting sustainable sellers with conscious buyers to reduce waste and extend product lifecycles.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-gray-900 mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-primary text-sm">Home</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary text-sm">About Us</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary text-sm">How It Works</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary text-sm">Sustainability Impact</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary text-sm">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-gray-900 mb-4">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-primary text-sm">Clothing</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary text-sm">Food</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary text-sm">Electronics</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary text-sm">Home & Garden</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary text-sm">Beauty & Personal Care</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-gray-900 mb-4">Newsletter</h3>
+                    <p class="text-gray-600 text-sm mb-4">Subscribe to get updates on new sustainable products and eco-tips.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="flex-1 border border-gray-200 rounded-l py-2 px-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+                        <button class="bg-primary text-white py-2 px-4 rounded-r text-sm hover:bg-primary/90 whitespace-nowrap">Subscribe</button>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-medium text-gray-900 text-sm mb-2">We Accept</h4>
+                        <div class="flex space-x-3">
+                            <div class="w-8 h-5 flex items-center justify-center text-gray-600">
+                                <i class="ri-visa-line"></i>
+                            </div>
+                            <div class="w-8 h-5 flex items-center justify-center text-gray-600">
+                                <i class="ri-mastercard-line"></i>
+                            </div>
+                            <div class="w-8 h-5 flex items-center justify-center text-gray-600">
+                                <i class="ri-paypal-line"></i>
+                            </div>
+                            <div class="w-8 h-5 flex items-center justify-center text-gray-600">
+                                <i class="ri-apple-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-100 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">© 2025 EcoShift. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-primary text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-primary text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-primary text-sm">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle wishlist hearts
+            const wishlistButtons = document.querySelectorAll('[class*="ri-heart"]');
+            wishlistButtons.forEach(button => {
+                button.parentElement.addEventListener('click', function() {
+                    const icon = this.querySelector('i');
+                    if (icon.classList.contains('ri-heart-line')) {
+                        icon.classList.remove('ri-heart-line');
+                        icon.classList.add('ri-heart-fill');
+                        this.classList.add('text-red-500');
+                        this.classList.remove('text-gray-400');
+                    } else {
+                        icon.classList.remove('ri-heart-fill');
+                        icon.classList.add('ri-heart-line');
+                        this.classList.remove('text-red-500');
+                        this.classList.add('text-gray-400');
+                    }
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Price range slider
+            const rangeInput = document.querySelector('input[type="range"]');
+            const maxPriceInput = document.querySelectorAll('input[type="number"]')[1];
+            
+            rangeInput.addEventListener('input', function() {
+                maxPriceInput.value = this.value;
+            });
+            
+            maxPriceInput.addEventListener('input', function() {
+                rangeInput.value = this.value;
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Size buttons
+            const sizeButtons = document.querySelectorAll('.grid-cols-4 button');
+            sizeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    sizeButtons.forEach(btn => {
+                        btn.classList.remove('border-primary', 'bg-primary/10', 'text-primary');
+                        btn.classList.add('border-gray-200');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('border-primary', 'bg-primary/10', 'text-primary');
+                    this.classList.remove('border-gray-200');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
