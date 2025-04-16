@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoShift - Sustainable Shopping</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#4CAF50',secondary:'#8BC34A'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<script src="EcoReuse Marketplace.html">
+</script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Header -->
+<header class="w-full bg-white shadow-sm sticky top-0 z-50">
+<div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <a href="#" class="block w-[150px]">
+        <img src="logoecoshift.png" />
+      </a>
+      <nav class="hidden md:flex space-x-8">
+<a href="#" class="text-gray-800 hover:text-primary font-medium transition-colors">Home</a>
+<a href="#" class="text-gray-800 hover:text-primary font-medium transition-colors">About</a>
+<a href="#" class="text-gray-800 hover:text-primary font-medium transition-colors">How it Works</a>
+<a href="#" class="text-gray-800 hover:text-primary font-medium transition-colors">Contact</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="px-4 py-2 text-primary border border-primary hover:bg-primary/5 font-medium !rounded-button whitespace-nowrap transition-colors">Log In</button>
+<button class="px-4 py-2 bg-primary text-white font-medium hover:bg-primary/90 !rounded-button whitespace-nowrap transition-colors">Sign Up</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative w-full bg-cover bg-center py-24" style="background-image: url('https://readdy.ai/api/search-image?query=A%20sustainable%20marketplace%20scene%20with%20recycled%20clothing%20and%20food%20items%2C%20soft%20natural%20lighting%2C%20eco-friendly%20atmosphere%2C%20minimalist%20design%2C%20gradient%20green%20background%20on%20the%20left%20side%20fading%20to%20white%2C%20modern%20aesthetic%2C%20high-quality%20professional%20photography&width=1920&height=800&seq=123&orientation=landscape');">
+<div class="absolute inset-0 bg-gradient-to-r from-white/90 to-white/30"></div>
+<div class="container mx-auto px-4 relative z-10">
+<div class="max-w-2xl">
+<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Give Products a Second Life, Reduce Waste</h1>
+<p class="text-lg text-gray-700 mb-8">Join our sustainable marketplace connecting businesses and conscious consumers to extend the lifecycle of clothing and food products that would otherwise go to waste.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#buyer" class="px-8 py-4 bg-primary text-white font-medium text-center !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors">I'm a Buyer</a>
+<a href="#seller" class="px-8 py-4 border border-primary text-primary font-medium text-center !rounded-button whitespace-nowrap hover:bg-primary/5 transition-colors">I'm a Seller</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">How EcoShift Works</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Our platform connects businesses with excess inventory to conscious consumers looking for sustainable options at great prices.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Feature 1 -->
+<div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-shirt-line text-primary ri-2x"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Pre-loved Clothing</h3>
+<p class="text-gray-600">Browse quality second-hand clothing from top brands at a fraction of the original price. All items are carefully inspected and rated for condition.</p>
+</div>
+<!-- Feature 2 -->
+<div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-restaurant-line text-primary ri-2x"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Near-Expiry Food</h3>
+<p class="text-gray-600">Discover delicious food products approaching their best-by date at significant discounts. Still perfectly good to eat, just needs to be enjoyed soon!</p>
+</div>
+<!-- Feature 3 -->
+<div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-store-line text-primary ri-2x"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Business Solutions</h3>
+<p class="text-gray-600">Retailers and restaurants can easily list excess inventory, manage sales, and reduce waste while recovering costs and reaching new customers.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Impact Stats -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Our Environmental Impact</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Together with our community, we're making a real difference in reducing waste and promoting sustainable consumption.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<!-- Stat 1 -->
+<div class="bg-white p-8 rounded-lg shadow-sm text-center">
+<div class="text-4xl font-bold text-primary mb-2">12,450+</div>
+<p class="text-gray-600">Clothing Items Resold</p>
+</div>
+<!-- Stat 2 -->
+<div class="bg-white p-8 rounded-lg shadow-sm text-center">
+<div class="text-4xl font-bold text-primary mb-2">8,320+</div>
+<p class="text-gray-600">Food Items Saved</p>
+</div>
+<!-- Stat 3 -->
+<div class="bg-white p-8 rounded-lg shadow-sm text-center">
+<div class="text-4xl font-bold text-primary mb-2">245+</div>
+<p class="text-gray-600">Business Partners</p>
+</div>
+<!-- Stat 4 -->
+<div class="bg-white p-8 rounded-lg shadow-sm text-center">
+<div class="text-4xl font-bold text-primary mb-2">42 tons</div>
+<p class="text-gray-600">Waste Prevented</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Buyer Section -->
+<section id="buyer" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-1/2">
+<img src="https://readdy.ai/api/search-image?query=A%20diverse%20group%20of%20happy%20shoppers%20browsing%20through%20sustainable%20clothing%20on%20racks%2C%20bright%20natural%20lighting%2C%20clean%20minimalist%20store%20interior%20with%20green%20plants%2C%20eco-friendly%20shopping%20bags%2C%20high%20quality%20professional%20photography&width=600&height=500&seq=456&orientation=landscape" alt="Buyers browsing sustainable products" class="rounded-lg shadow-lg w-full h-auto object-cover">
+</div>
+<div class="md:w-1/2">
+<h2 class="text-3xl font-bold text-gray-900 mb-6">For Buyers</h2>
+<p class="text-lg text-gray-600 mb-8">Discover amazing deals on quality products while making a positive impact on the environment. Our marketplace offers a wide selection of pre-loved clothing and near-expiry food items at significant discounts.</p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-start">
+<div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-3 mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="text-gray-700">Browse thousands of quality products at 50-80% off retail prices</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-3 mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="text-gray-700">Filter by category, condition, expiration date, and more</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-3 mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="text-gray-700">Secure payment and convenient pickup options</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-3 mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="text-gray-700">Save money while reducing waste and environmental impact</span>
+</li>
+</ul>
+<a href="https://readdy.ai/home/20bf29c4-329d-4f77-9fd9-801aea11b117/d70faf04-f436-4bcf-9e00-8e332c004f15" data-readdy="true" class="inline-block px-6 py-3 bg-primary text-white font-medium !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors">Explore Marketplace</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Seller Section -->
+<section id="seller" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-1/2 order-2 md:order-1">
+<h2 class="text-3xl font-bold text-gray-900 mb-6">For Sellers</h2>
+<p class="text-lg text-gray-600 mb-8">Turn your excess inventory into revenue while contributing to a more sustainable future. Our platform makes it easy for businesses to list, sell, and manage their surplus products.</p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-start">
+<div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-3 mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="text-gray-700">Simple listing process with bulk upload options</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-3 mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="text-gray-700">Comprehensive dashboard to track sales and inventory</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-3 mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="text-gray-700">Secure payment processing with fast transfers</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-3 mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="text-gray-700">Reduce waste disposal costs and improve sustainability metrics</span>
+</li>
+</ul>
+<a href="https://readdy.ai/home/20bf29c4-329d-4f77-9fd9-801aea11b117/1c6c053c-2569-4911-b059-327ca2f23b1c" data-readdy="true" class="inline-block px-6 py-3 bg-primary text-white font-medium !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors">Partner With Us</a>
+</div>
+<div class="md:w-1/2 order-1 md:order-2">
+<img src="https://readdy.ai/api/search-image?query=A%20modern%20retail%20business%20owner%20using%20tablet%20to%20manage%20inventory%2C%20sustainable%20clothing%20store%20with%20organized%20racks%2C%20eco-friendly%20packaging%2C%20plants%20and%20natural%20elements%2C%20bright%20clean%20environment%2C%20professional%20business%20setting&width=600&height=500&seq=789&orientation=landscape" alt="Business owner managing inventory" class="rounded-lg shadow-lg w-full h-auto object-cover">
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">What Our Community Says</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Hear from the buyers and sellers who are part of our sustainable marketplace.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+<div class="flex items-center mb-4">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 mb-6">"I've found amazing designer clothes at a fraction of the retail price. The condition ratings are always accurate, and I love knowing I'm helping reduce textile waste."</p>
+<div class="flex items-center">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+<i class="ri-user-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Emma Richardson</h4>
+<p class="text-sm text-gray-500">Frequent Buyer</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+<div class="flex items-center mb-4">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 mb-6">"As a restaurant owner, EcoShift has been a game-changer. We can now sell our surplus ingredients before they expire, reducing our waste and recovering some costs."</p>
+<div class="flex items-center">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+<i class="ri-user-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Marcus Johnson</h4>
+<p class="text-sm text-gray-500">Restaurant Owner</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+<div class="flex items-center mb-4">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 mb-6">"The platform is incredibly easy to use. I've saved so much money on groceries by purchasing near-expiry items, and everything has been fresh and delicious!"</p>
+<div class="flex items-center">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+<i class="ri-user-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Sophia Martinez</h4>
+<p class="text-sm text-gray-500">Regular Customer</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20 bg-primary/5">
+<div class="container mx-auto px-4 text-center">
+<h2 class="text-3xl font-bold text-gray-900 mb-6">Ready to Join the Sustainable Marketplace?</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">Whether you're looking to shop sustainably or sell your excess inventory, EcoShift makes it easy to make a positive impact.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a href="#" class="px-8 py-4 bg-primary text-white font-medium !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors">Create an Account</a>
+<a href="#" class="px-8 py-4 border border-primary text-primary font-medium !rounded-button whitespace-nowrap hover:bg-primary/5 transition-colors">Learn More</a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+<div>
+<a href="#" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">EcoShift</a>
+<p class="text-gray-400 mb-4">Making sustainable shopping accessible to everyone while reducing waste.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+<i class="ri-instagram-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">How It Works</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQs</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">For Buyers</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Browse Clothing</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Food Marketplace</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Create Account</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Payment Methods</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Pickup Locations</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">For Sellers</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Business Registration</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Seller Dashboard</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Listing Guidelines</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Payout Information</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Business Support</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 EcoShift. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+<a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+<a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+</body>
+</html>
